@@ -1,0 +1,121 @@
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #282c34;
+    color:rgb(92, 70, 145);
+}
+
+#container {
+    display: flex;
+    flex-flow: column;
+    border-radius:10px;
+    width: 40vh;
+    height: 60vh;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  
+    border: 5px solid rgba(255, 255, 255, 0.75);
+
+}
+
+.row{
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row;
+}
+
+#display {
+    display: block;
+    font-family: sans-serif;
+    height: 15%;
+    border: 5px solid rgba(255, 255, 255, 0.75);
+    margin:5px;
+    padding: 5px;
+    border-radius: 2%;
+
+}
+
+#previous {
+    text-align: right;
+    margin: 4px;
+    color:  rgba(255, 255, 255, 0.75);
+    height: 25%;
+    vertical-align: middle;
+    font-size: 2vh;
+}
+
+#inputs {
+    font-size: 2.5em;
+    font-family: sans-serif;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.9);
+    text-align: right;
+    margin: 0px auto 0px auto;
+    width: 98%;
+    height: 65%;
+    border: none;
+    outline: none;
+}
+
+#zero {
+    width: 52%;
+}
+
+
+button{
+    color: rgba(255, 255, 255, 0.75);;
+    background-color: #282c34b4;
+    padding: 0;
+    width: 25%;
+    font-size: 2em;
+    font-weight: 500;
+    border-style: none;
+    border: 5px solid rgba(255, 255, 255, 0.75);
+    margin:5px;
+    outline: none;
+    border-radius: 5%;
+}
+
+
+.pressed {
+    background-color: rgba(255, 255, 255, 0.9);
+    color:  #282c34b4;
+    transition: all .4s ease;
+    
+}
+
+{
+    "classic": {
+      "purple": "#c678dd",
+      "error": "#f44747",
+      "coral": "#e06c75",
+      "whiskey": "#d19a66",
+      "chalky": "#e5c07b",
+      "lightDark": "#7f848e",
+      "dark": "#5c6370",
+      "malibu": "#61afef",
+      "green": "#98c379",
+      "fountainBlue": "#56b6c2",
+      "invalid": "#ffffff"
+    },
+    "vivid": {
+      "purple": "#d55fde",
+      "error": "#f44747",
+      "coral": "#ef596f",
+      "whiskey": "#d19a66",
+      "chalky": "#e5c07b",
+      "lightDark": "#7f848e",
+      "dark": "#5c6370",
+      "malibu": "#61afef",
+      "green": "#89ca78",
+      "fountainBlue": "#2bbac5",
+      "invalid": "#ffffff"
+    }
+  }

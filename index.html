@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+    </head>
+
+    <body>
+        <div id="container">
+            <div class="row" id="display">
+                <p data-previous id="previous"></p>
+                <input data-input id="inputs" type="text" value="0" maxlength="9" onfocus="this.value = this.value" >
+            </div>
+            <div class="row">
+                <button data-clear>AC</button>
+                <button data-minus>+/-</button>
+                <button data-percentage>%</button>
+                <button data-op class="notpressed">÷</button>
+            </div>
+            <div class="row">
+                <button data-number>7</button>
+                <button data-number>8</button>
+                <button data-number>9</button>
+                <button data-op class="notpressed">x</button>
+            </div>
+            <div class="row">
+                <button data-number>4</button>
+                <button data-number>5</button>
+                <button data-number>6</button>
+                <button data-op class="notpressed">-</button>
+            </div>
+            <div class="row">
+                <button data-number>1</button>
+                <button data-number>2</button>
+                <button data-number>3</button>
+                <button data-op class="notpressed">+</button>
+            </div>
+            <div class="row">
+                <button data-number id="zero">0</button>
+                <button data-number>.</button>
+                <button data-equals id="sum">=</button>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html> 
