@@ -54,17 +54,18 @@ function operator(a, operator, b){
 }
 
 function simplifyNum(num){
-    if(num > 999999999){
+    num = num.toString()
+    let decimalIndex = num.indexOf(".")
+    let expIndex = num.indexOf('e')
+    if(Number(num) > 999999999){
         num = Number(num).toExponential()
-
-        let decimalIndex = num.indexOf(".")
-        let expIndex = num.indexOf('e')
-    
         if(decimalIndex > 0 && expIndex > 3){
             let num1 = num.split("").splice(0, decimalIndex + 3)
             let num2 = num.split("").splice(expIndex)
             num = num1.concat(num2).join("")
         }
+    } else if(decimalIndex > 0){
+        num = Number(num).toFixed(2)
     }
     return num 
 }
@@ -100,22 +101,17 @@ opBtn.forEach(button => button.addEventListener('click', () => {
     removeClass();
     button.classList.remove("notpressed")
     button.classList.add("pressed")
-    
-    
     if(previousTextElement.textContent !== "" && numPressed){
         a = Number(previousTextElement.textContent)
         b = Number(inputTextElement.value)
         inputTextElement.value = operator(a, op, b);
         previousTextElement.textContent = simplifyNum(inputTextElement.value)
     }
-    console.log(a, op, b)
     a = Number(inputTextElement.value)
     previousTextElement.textContent = a
-
     op = button.innerText
     opPressed = true;
     numPressed = false;  
-    console.log(a, op, b)
 }))
 
 equalsBtn.addEventListener('click', () => {
@@ -330,25 +326,6 @@ inputTextElement.addEventListener('change', () => {
 
 
 
-
-
-
-
-// USE TO MAKE NUMBERS WITH COMMAS
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-//IF OVER 999,999,999 RETURN EXPONENTIAL
-
-function expo(x) {
-    return x.toExponential();
-  }
-  
-  console.log(expo(1000000000));
-  
-  
 
 
 
