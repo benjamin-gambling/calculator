@@ -64,10 +64,13 @@ function simplifyNum(num){
             let num2 = num.split("").splice(expIndex)
             num = num1.concat(num2).join("")
         }
-    } else if(decimalIndex > 0){
+        console.log(num)
+        return num 
+    } else if(num < 999999999 && decimalIndex > 0){
         num = Number(num).toFixed(2)
-    }
-    return num 
+        console.log(num)
+        return num
+    }      
 }
 
 numBtn.forEach(button => button.addEventListener('click', () => {
@@ -110,7 +113,7 @@ opBtn.forEach(button => button.addEventListener('click', () => {
     if(previousTextElement.textContent !== "" && numPressed){
         a = Number(previousTextElement.textContent)
         b = Number(inputTextElement.value)
-        inputTextElement.value = operator(a, op, b);
+        inputTextElement.value = simplifyNum(operator(a, op, b));
         previousTextElement.textContent = simplifyNum(inputTextElement.value)
     }
     a = Number(inputTextElement.value)
@@ -131,7 +134,7 @@ equalsBtn.addEventListener('click', () => {
         } else if(numPressed){
             b = Number(inputTextElement.value)
         }
-        inputTextElement.value = operator(a, op, b);
+        inputTextElement.value = simplifyNum(operator(a, op, b));
         previousTextElement.textContent = simplifyNum(inputTextElement.value)
     }
     opPressed = true;
