@@ -72,6 +72,7 @@ function simplifyNum(num){
 
 numBtn.forEach(button => button.addEventListener('click', () => {
     equalsBtn.classList.remove("pressed")
+    button.classList.add('num')
     if(opPressed && numPressed === false){
         inputTextElement.value = ""  
         numPressed = true
@@ -96,6 +97,11 @@ numBtn.forEach(button => button.addEventListener('click', () => {
        clearBtn.textContent = "C"
    }
 }))
+
+numBtn.forEach(button =>  button.addEventListener('transitionend', () => {
+    button.classList.remove('num');
+}))
+
 
 opBtn.forEach(button => button.addEventListener('click', () => {
     removeClass();
@@ -178,6 +184,13 @@ window.onkeydown = function(e) {
 
     //NUMBERS  
     if(digits.includes(e.key)) {
+
+        for(let i = 0; i < numBtn.length; i++){
+            if(numBtn[i].innerText == e.key){
+                numBtn[i].classList.add("num")
+            }
+        }
+
         if(opPressed && numPressed === false){
             inputTextElement.value = ""  
             numPressed = true 

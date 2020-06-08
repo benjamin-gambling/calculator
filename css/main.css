@@ -70,7 +70,7 @@ body {
 
 
 button{
-    color: rgba(255, 255, 255, 0.75);;
+    color: rgba(255, 255, 255, 1);
     background-color: #282c34b4;
     padding: 0;
     width: 25%;
@@ -83,13 +83,31 @@ button{
     border-radius: 5%;
 }
 
+.op {
+    background-color: rgb(97, 175, 239);
+    color: rgba(255, 255, 255, 1);
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.top {
+    background-color: rgba(255, 255, 255, 1);
+    color: #282c34b4;
+}
+
 
 .pressed {
-    background-color: rgba(255, 255, 255, 0.9);
-    color:  #282c34b4;
+    background-color: rgba(255, 255, 255, 1);
+    color:  rgb(97, 175, 239);
     transition: all .4s ease;
     
 }
+
+.num{
+    transition: all 0.15s ease-out;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
 
 {
     "classic": {
